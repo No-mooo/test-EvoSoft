@@ -1,14 +1,13 @@
 "use strict";
 
-const { By, Key, Builder, Actions } = require("selenium-webdriver");
-// require("chromedriver");
+const { By, Key, Builder } = require("selenium-webdriver");
 const chrome = require('selenium-webdriver/chrome');
 const options = new chrome.Options();
 
 options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
 options.addArguments("--disable-blink-features=AutomationControlled");
 options.excludeSwitches('enable-automation');
-options.excludeSwitches('enable-logging'); // no close broywher
+options.excludeSwitches('enable-logging');
 
 const driver = new Builder().forBrowser("chrome").setChromeOptions(options).build();
 const fs = require('fs');
